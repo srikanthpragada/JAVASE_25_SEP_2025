@@ -15,5 +15,4 @@ public class Square {
 		
 		s.close();
 	}
-
 }
