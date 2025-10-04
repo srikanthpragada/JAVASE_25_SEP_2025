@@ -6,6 +6,7 @@ public class Wish {
 			System.out.println("Hello Guest!");
 		else
 			System.out.printf("Hello %s", args[0]);
+		
 	}
 
 }
