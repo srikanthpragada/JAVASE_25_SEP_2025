@@ -4,6 +4,15 @@ class SavingsAccount {
 	private int acno;
 	private String customer;
 	private double balance;
+	private static int minBal = 10000;
+
+	public static void setMinBal(int minBal) {
+		SavingsAccount.minBal = minBal;
+	}
+
+	public static int getMinBal() {
+		return SavingsAccount.minBal;
+	}
 
 	public SavingsAccount(int acno, String customer) {
 		this.acno = acno;
@@ -11,7 +20,7 @@ class SavingsAccount {
 	}
 
 	public SavingsAccount(int acno, String customer, double balance) {
-		this(acno, customer); // call another constructor 
+		this(acno, customer); // call another constructor
 		this.balance = balance;
 	}
 
@@ -20,7 +29,11 @@ class SavingsAccount {
 	}
 
 	public void withdraw(double amount) {
-		this.balance -= amount;
+		if(this.balance - SavingsAccount.minBal >= amount)
+		      this.balance -= amount;
+		else
+			System.out.println("Insufficient Balance!");
+		
 	}
 
 	public double getBalance() {
