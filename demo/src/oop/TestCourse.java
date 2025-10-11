@@ -1,6 +1,6 @@
 package oop;
 
-class Course {
+abstract class Course {
 	protected String title;
 	protected int duration, fee;
 
@@ -15,6 +15,8 @@ class Course {
 		System.out.println(this.duration);
 		System.out.println(this.fee);
 	}
+	
+	public abstract int getFee();
 }
 
 class OfflineCourse extends Course {
@@ -48,6 +50,10 @@ class OnlineCourse extends Course {
 	public void show() {
 		super.show();
 		System.out.println(this.url);
+	}
+	
+	public int getFee() {
+		return this.fee + (this.fee * 5 / 100);
 	}
 }
 
