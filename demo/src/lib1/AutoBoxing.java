@@ -11,7 +11,7 @@ public class AutoBoxing {
 		 
 		 int a = iobj;  // Auto-unboxing 
 		 
-		 double d = obj; 
+		 double d = (Double) obj; // Downcasting & unboxing 
 
 	}
 
