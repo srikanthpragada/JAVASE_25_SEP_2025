@@ -29,11 +29,11 @@ class SavingsAccount {
 	}
 
 	public void withdraw(double amount) {
-		if(this.balance - SavingsAccount.minBal >= amount)
-		      this.balance -= amount;
+		if (this.balance - SavingsAccount.minBal >= amount)
+			this.balance -= amount;
 		else
-			System.out.println("Insufficient Balance!");
-		
+			throw new IllegalArgumentException("Insufficient Balance!");
+
 	}
 
 	public double getBalance() {
@@ -47,7 +47,10 @@ public class TestAccount {
 		SavingsAccount s = new SavingsAccount(1, "Edwards");
 		s.deposit(10000);
 		System.out.println(s.getBalance());
-
+		try {
+			s.withdraw(10000);
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		}
 	}
-
 }
