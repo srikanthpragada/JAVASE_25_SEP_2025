@@ -2,9 +2,11 @@ package threads;
 
 class PrimeThread extends Thread {
 	private int num;
+	
 	public PrimeThread(int num) {
 		this.num = num;
 	}
+	
 	public void run() {
 		for (int i = 2; i <= num / 2; i++) {
 			if (num % i == 0) {
