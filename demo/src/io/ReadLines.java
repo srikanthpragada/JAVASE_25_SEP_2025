@@ -11,7 +11,7 @@ public class ReadLines {
 
 		while (true) {
 			String line = br.readLine();
-			if (line == null)
+			if (line == null) // EOF
 				break;
 
 			System.out.println(line);
